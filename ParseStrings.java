@@ -1,47 +1,3 @@
-// (1) Prompt the user for a string that contains two strings separated by a comma. (1 pt)
-
-// Examples of strings that can be accepted:
-// Jill, Allen
-// Jill , Allen
-// Jill,Allen
-// Ex:
-
-// Enter input string: Jill, Allen
-
-// (2) Report an error if the input string does not contain a comma. Continue to prompt until a valid string is entered. Note: If the input contains a comma, then assume that the input also contains two strings. (2 pts)
-
-// Ex:
-
-// Enter input string: Jill Allen
-// Error: No comma in string
-// Enter input string: Jill, Allen
-
-// (3) Extract the two words from the input string and remove any spaces. Store the strings in two separate variables and output the strings. (2 pts)
-
-// Ex:
-
-// Enter input string: Jill, Allen
-// First word: Jill
-// Second word: Allen
-
-// (4) Using a loop, extend the program to handle multiple lines of input. Continue until the user enters q to quit. (2 pts)
-
-// Ex:
-
-// Enter input string: Jill, Allen
-// First word: Jill
-// Second word: Allen
-
-// Enter input string: Golden , Monkey
-// First word: Golden
-// Second word: Monkey
-
-// Enter input string: Washington,DC
-// First word: Washington
-// Second word: DC
-
-
-// Enter input string: q
 
 // ask for 2 strings separated by a comma (+ to join)
 // *** 
@@ -60,7 +16,16 @@
 // * firstWord = "First word: "
 // * secondWord = "Second word: " 
 
-// * Declare method parsingString() pass scanner (this will be for input)
+// CONTINUE TO ASK FOR INPUT IF NOT Q
+
+// Use a while loop to check for char q to quit
+// while (!input.equals("q")) {
+//  Print "Enter input string: " use System.out.println();
+//  set input = scnr.nextLine();
+//  use if statement to check q condition
+//  if (input.equals("q")) {
+//      use break to stop & exit break;
+//  
 
 //CHECKING FOR COMMAS AND PRINTING ERROR IF NOT FOUND WHILE LOOP
 // * declare input and set to ""
@@ -82,18 +47,8 @@
 // REMOVE spaces with .trim() & print with message
 // firstWord = firstWord.trim();
 // secondWord = secondWord.trim();
-
-// CONTINUE TO ASK FOR INPUT IF NOT Q
-
-// Use a while loop to check for char q to quit
-// while (!input.equals("q")) {
-//  Print "Enter input string: " use System.out.println();
-//  set input = scnr.nextLine();
-//  use if statement to check q condition
-//  if (input.equals("q")) {
-//      use break to stop & exit break;
-//  } 
-//  
+// new line
+// }
 
 
 import java.util.Scanner;
@@ -120,13 +75,13 @@ public class ParseStrings {
         }
 
         String[] splitInput = input.split(",");
-        System.out.println(splitInput.length);
         firstWord = splitInput[0];
         secondWord = splitInput[1];
         firstWord = firstWord.trim();
         secondWord = secondWord.trim();
         System.out.println("First word: " + firstWord);
         System.out.println("Second word: " + secondWord);
+        System.out.println("\n");
 
         }
         scnr.close();
